@@ -16,4 +16,4 @@
         %a{:href => "/users/#{post.user.id}"}
           %span 投稿者
           = post.user.nickname
-
+  = paginate(@posts)
