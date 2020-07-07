@@ -7,7 +7,8 @@
  * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
  */
 @font-face {
-    font-family: 'ほのか明朝';
+    font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+    src: url('font_1_honokamin.ttf') format('truetype');
     src: url('font_1_honokamin.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -51,7 +52,7 @@ line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
   color: $dark;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
   margin: 0;
 }
 
@@ -60,7 +61,7 @@ a {
   color: $dark;
   @extend .transition;
   &:hover {
-    color: $accent;
+    color: $black;
   }
 }
 
@@ -69,7 +70,7 @@ a {
 }
 
 .serif {
-  font-family: 'ほのか明朝',serif;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
 }
 
 .ultra {
@@ -89,15 +90,15 @@ a {
 .btn {
     @include basePadding(8px 20px);
     font-size: 14px;
-    border: 2px solid $accent;
-    color: $accent;
+    border: 1px solid $black;
+    color: $black;
     font-weight: bold;
     text-align: center;
     border-radius: 3px;
     display: inline-block;
   &:hover {
-    border-color: lighten($accent, 15%);
-    color: lighten($accent, 15%);
+    border-color: lighten($black, 15%);
+    color: lighten($black, 15%);
   }
 }
 
@@ -221,7 +222,7 @@ div.contents.row {
     }
   }
   .new_user{
-  font-family: "游ゴシック", "YuGothic";
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
   }
   div.content_post {
     @include boxBase(20px 0 ,30px);
@@ -276,7 +277,7 @@ div.contents.row {
             display: block;
             padding: 5px;
             &:hover {
-              background-color: $accent;
+              background-color: $black;
               color: #fff;
             }
           }
@@ -339,17 +340,17 @@ form {
     @include boxBase(5px 0 15px,10px);
     border: 1px solid $gray;
     border-radius: 5px;
-    font-family: "游ゴシック", "YuGothic";
+    font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
   }
   input[type="submit"] {
     @extend .transition;
-    background-color: $accent;
+    background-color: $black;
     border-radius: 20px;
     color: #fff;
     border: 0;
     font-size: 18px;
     &:hover {
-      background-color: lighten($accent, 10%);
+      background-color: lighten($black, 10%);
     }
   }
 }
@@ -358,12 +359,23 @@ form {
   box-shadow: 0 0 10px rgba($black,0.2);
   background-color: $white;
   box-sizing: border-box;
+  border-radius: 5px;
+}
+.image {
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  margin: 5px 0 15px;
+  .image-url {
+    opacity: 0;
+  }
+  .image-label {
+  }
 }
 .comments {
   padding: 5px;
   margin-top: 15px;
   a {
-    color: $accent;
+    color: $black;
     &:hover {
       text-decoration: underline;
     }
