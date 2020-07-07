@@ -10,4 +10,24 @@
             = link_to '削除', "/posts/#{@post.id}", method: :delete
     = simple_format(@post.text)
     %span.name
-      = @post.user.nickname
+      %a{:href => "/users/#{@post.user.id}"}
+        %span 投稿者
+        = @post.user.nickname
+  .container
+    - if current_user
+      = form_with(model: [@post, @comment], local: true) do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "2"
+        = form.submit "SEND"
+    - else
+      %strong
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .comments
+      %h4 ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+              ：
+              = comment.text
+
