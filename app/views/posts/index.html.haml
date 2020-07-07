@@ -6,10 +6,11 @@
         %ul.more_list
           %li
             = link_to '詳細', "posts/#{post.id}", method: :get
-          %li
-            = link_to '編集', "/posts/#{post.id}/edit", method: :get
-          %li
-            = link_to '削除', "/posts/#{post.id}", method: :delete
+          - if user_signed_in? && current_user.id == post.user_id
+            %li
+              = link_to '編集', "/posts/#{post.id}/edit", method: :get
+            %li
+              = link_to '削除', "/posts/#{post.id}", method: :delete
       = simple_format(post.text)
       %span.name
         %a{:href => "/users/#{post.user.id}"}
